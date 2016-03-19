@@ -1,0 +1,41 @@
+<h3 class="page-header">
+  All Users
+  <span class="pull-right">
+    <%= link_to "New User", new_user_path, class: 'btn btn-sm btn-success' %>
+  </span>
+</h3>
+
+<ul>
+  <% @users.each do |user| %>
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <%= link_to user.name, user_url(user) %>
+    </div>
+  <div class="panel-body">
+  <div class="col-lg-4">
+  <%= image_tag(user.image, size: "200x200") %>
+  </div>
+  <% if user.iscarepro==true %>
+  Role: <%= "Carepro" %><br/>
+  <% else %>
+  Role: <%= "Family member" %><br/>
+  <% end %>
+  Gender: <%= user.gender %><br/>
+  Specialty: <%= user.specialty %><br/>
+  Hourly rate: <%= user.hourlyrate %><br/>
+  About: <%= user.about %><br/>
+   <br/> 
+   <br/>
+   <%= link_to "Edit", edit_user_url(user), class: "btn btn-primary" %>
+      <%= link_to "Delete", 
+            user_url(user), 
+            method: :delete,
+            data: { confirm: 'Are you sure?' },
+            class: "btn btn-danger"%>
+   
+    </div>
+    </div>
+  <% end %>
+</ul>
+  
+  

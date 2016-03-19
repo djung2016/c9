@@ -1,0 +1,6 @@
+<%= bootstrap_form_tag url: sessions_path do |form| %>
+  <h2>Please sign in</h2>
+  <%= form.text_field :email, placeholder: "Email Address" %>
+  <%= form.password_field :password, placeholder: "Password" %>
+  <%= form.submit "Sign In" %>
+<% end %>

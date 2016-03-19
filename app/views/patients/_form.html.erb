@@ -1,0 +1,15 @@
+<%= bootstrap_form_for @patient do |form| %>
+  <%= form.text_field :name %>
+  <%= form.number_field :age %>
+  <%= form.form_group :gender, label: { text: "Gender" } do %>
+  <%= form.radio_button :gender, "male", label: "Male", checked: true %>
+  <%= form.radio_button :gender, "female", label: "Female" %>
+  <% end %>
+  <%= form.text_field :phone_no %>
+  <%= form.text_field :address %>
+  <%= form.text_field :email %>
+  <%= form.text_field :about %>
+  <%= form.file_field :image %>
+  <%= form.password_field :password %>
+  <%= form.button 'Save Patient', class: "btn btn-success" %>
+<% end %>

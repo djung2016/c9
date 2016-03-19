@@ -1,0 +1,22 @@
+<%= bootstrap_form_for @user do |form| %>
+  <%= form.text_field :name %>
+  <%= form.form_group :gender, label: { text: "Gender" } do %>
+  <%= form.radio_button :gender, "male", label: "Male", checked: true %>
+  <%= form.radio_button :gender, "female", label: "Female" %>
+  <% end %>
+  <%= form.text_field :phone_no %>
+  <%= form.text_field :address %>
+  <%= form.email_field :email %>
+  <%= form.text_field :specialty %>
+  <%= form.file_field :image %>
+  <%= form.number_field :hourlyrate %>
+  <%= form.text_field :about %>
+  <%= form.password_field :password %>
+  <%= form.form_group :iscarepro, label: { text: "Are you a Carepro or a family member?" } do %>
+  <%= form.radio_button :iscarepro, 0, label: "Family member", checked: true %>
+  <%= form.radio_button :iscarepro, 1, label: "Carepro" %>
+  <% end %>
+  
+  <%= form.button 'Save User', class: "btn btn-success" %>
+<% end %>
+

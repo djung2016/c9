@@ -1,0 +1,80 @@
+ <div class="panel panel-default">
+  <div class="panel-heading">Appointment details for <%= Patient.find_by(id: @calendar_event.patient_id).name %></div>
+  <div class="panel-body">
+      <div class="row">
+          <div class="col-lg-4">
+            <%= image_tag(@calendar_event.user.image, size: "200x200") %>
+          </div>
+          <div class="col-lg-8">
+              <div class="row">
+                  <div class="col-lg-6">
+                      <b>
+                      Caregiver name:
+                      </b>
+                  </div>
+                  <div class="col-lg-6">
+                      <%= @calendar_event.user.name %>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6">
+                      <b>
+                      Date:
+                      </b>
+                  </div>
+                  <div class="col-lg-6">
+                      <%= @calendar_event.date %>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6">
+                      <b>
+                      Start Time:
+                      </b>
+                  </div>
+                  <div class="col-lg-6">
+                      <%= @calendar_event.start_time %>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6">
+                      <b>
+                      End Time:
+                      </b>
+                  </div>
+                  <div class="col-lg-6">
+                      <%= @calendar_event.end_time %>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6">
+                      <b>
+                      Activity:
+                      </b>
+                  </div>
+                  <div class="col-lg-6">
+                      <%= @calendar_event.activity.name %>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6">
+                                       
+                  </div>
+                  <div class="col-lg-6">
+                      <br/>
+                    <%= link_to "Edit", edit_calendar_event_url(@calendar_event),class: "btn btn-primary" %>
+                    <%= link_to "Delete", 
+                    calendar_event_url(@calendar_event), 
+                    method: :delete,
+                    data: { confirm: 'No, really?!' },
+                    class: "btn btn-danger"%>
+                  </div>
+              </div>
+            
+          </div>
+      </div>
+  
+    </div>
+    </div>
+
+  

@@ -1,0 +1,19 @@
+<h3 class="page-header">
+  All activities
+  <span class="pull-right">
+    <%= link_to "New activity", new_activity_url, class: 'btn btn-sm btn-success' %>
+  </span>
+</h3>
+
+<ul>
+  <% @activities.each do |activity| %>
+    <li>
+      <%= link_to activity.name, activity %>
+      <%= link_to "Edit", edit_activity_url(activity) %>
+      <%= link_to "Delete", 
+            activity_url(activity), 
+            method: :delete,
+            data: { confirm: 'No, really?!' } %>
+    </li>
+  <% end %>
+</ul>

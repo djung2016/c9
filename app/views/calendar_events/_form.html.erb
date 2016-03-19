@@ -1,0 +1,12 @@
+<%= bootstrap_form_for @calendar_event do |form| %>
+  <%= form.text_field :date, label:"Date (mm/dd/yyyy)" %>
+  <%= form.text_field :start_time, label: "Start time (hh:mm, 24hrs)" %>
+  <%= form.text_field :end_time, label: "End time (hh:mm, 24hrs)" %>
+  <%= form.collection_select :patient_id, Patient.all,:id, :name ,label: "Select Patient:" %>
+  <%= form.collection_select :activity_id, Activity.all, :id, :name ,label: "Select Activity:" %>
+  <%= form.collection_select :user_id, User.all, :id, :name , label: "Select Care Provider:" %>
+  <%= form.button 'Save', class: "btn btn-success" %>
+  <%= form.button 'Back', class: "btn btn-link" %>
+  <% end %>
+
+

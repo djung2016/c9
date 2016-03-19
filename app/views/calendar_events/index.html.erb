@@ -1,0 +1,31 @@
+<h3 class="page-header">
+  All Calendar Events
+  <span class="pull-right">
+    <%= link_to "New CalendarEvents", new_calendar_event_url, class: 'btn btn-sm btn-success' %>
+  </span>
+</h3>
+
+<ul>
+  <% @calendar_event.each do |calendar_event| %>
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <%= link_to Patient.find_by(id: calendar_event.patient_id).name, calendar_event_url(calendar_event) %>
+    </div>
+  <div class="panel-body">
+  
+  Date: <%= calendar_event.date %><br/>
+  Start time: <%= calendar_event.start_time %><br/>
+  End time: <%= calendar_event.end_time %><br/>
+  <br/> 
+   <%= link_to "Edit", edit_calendar_event_url(calendar_event), class: "btn btn-primary" %>
+      <%= link_to "Delete", 
+            calendar_event_url(calendar_event), 
+            method: :delete,
+            data: { confirm: 'Are you sure?' },
+            class: "btn btn-danger"%>
+   
+    </div>
+    </div>
+  <% end %>
+</ul>
+

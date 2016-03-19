@@ -1,0 +1,60 @@
+User
+  name: string
+  role: string
+  image: text
+  gender: string
+  phone_no: string
+  address: text
+  email: string
+  specialty: text
+  hourlyrate: integer
+  password_digest: string
+  iscarepro: boolean
+  about: text
+# about: experience, licenses or unique characteristics
+
+Patient
+  name: string
+  age: integer
+  gender: string
+  image: text
+  phone_no: string
+  address: text
+  email: string
+  password_digest: string
+  about: text
+  created_by_user_id: integer
+  
+FamilyRelationship
+  user_id: integer
+  patient_id: integer
+# family member associated with patient (more than one family member can be associated with 1 patient (ex: 4 family members for 1 patient, caregiver is not necessarily designated one patient)
+
+CareproRelationship
+  user_id: integer
+  patient_id: integer
+  
+Illness
+  name: string
+#ALS, Alzheimers, Cancer, Dementia, etc.
+
+PatientIllness
+  illness_id: integer
+  patient_id: integer
+
+Rating
+  user_id: string
+  rating: integer
+  
+Activity
+  name: string
+#bathing, grooming, groceries, cleaning, transportation, conversation, therapy, etc.
+
+CalendarEvent
+  date: string
+  start_time: string
+  end_time: string
+  user_id: integer
+  patient_id: integer
+  activity_id: integer
+#selecting time slot in patient's calendar, by allocating person and activity

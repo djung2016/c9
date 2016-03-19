@@ -1,0 +1,34 @@
+<h3 class="page-header">
+  All Patients
+  <span class="pull-right">
+    <%= link_to "New patient", new_patient_url, class: 'btn btn-sm btn-success' %>
+  </span>
+</h3>
+
+
+<ul>
+  <% @patients.each do |patient| %>
+  <div class="panel panel-default">
+  <div class="panel-heading">
+  <%= patient.name %>
+    </div>
+  <div class="panel-body">
+  <div class="col-lg-4">
+  <%= image_tag(patient.image, size: "300x200") %>
+  </div>
+  Age: <%= patient.age %><br/>
+  Gender: <%= patient.gender %><br/>
+  About: <%= patient.about %><br/>
+   <br/> 
+   <br/>
+   <%= link_to "Edit", edit_patient_url(patient), class: "btn btn-primary" %>
+      <%= link_to "Delete", 
+            patient_url(patient), 
+            method: :delete,
+            data: { confirm: 'Are you sure?' },
+            class: "btn btn-danger"%>
+   
+    </div>
+    </div>
+  <% end %>
+</ul>

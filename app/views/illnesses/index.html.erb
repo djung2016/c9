@@ -1,0 +1,19 @@
+<h3 class="page-header">
+  All Illnesses
+  <span class="pull-right">
+    <%= link_to "New illness", new_illness_url, class: 'btn btn-sm btn-success' %>
+  </span>
+</h3>
+
+<ul>
+  <% @illnesses.each do |illness| %>
+    <li>
+      <%= link_to illness.name, illness %>
+      <%= link_to "Edit", edit_illness_url(illness) %>
+      <%= link_to "Delete", 
+            illness_url(illness), 
+            method: :delete,
+            data: { confirm: 'No, really?!' } %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,22 @@
+
+<h3><%= @user.name %></h3>
+
+<div class="row">
+ <img src="/assets/<%= @user.image %>" height=30% width=30% border="0">
+  <p><b> Name: </b> <%= @user.name %></p>
+  <p><b> Role: </b> 
+    <% if @user.iscarepro==true %>
+    <%= "Carepro" %></p>
+    <% else %>
+    <%= "Family member" %></p>
+    <% end %>
+  <p><b> Gender: </b> <%= @user.gender %></p>
+  <p><b> Phone number: </b> <%= @user.phone_no %></p>
+  <p><b> Address: </b> <%= @user.address %></p>
+  <p><b> Email: </b> <%= @user.email %></p>
+  <p><b> Specialty: </b> <%= @user.specialty %></p>
+  <p><b> Hourlyrate: </b> <%= @user.hourlyrate %></p>
+</div>
+
+
+  
